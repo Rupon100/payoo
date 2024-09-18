@@ -29,12 +29,12 @@
                 <div class="divider"></div>
                 <!-- user action button -->
                 <div>
-                    <button class="btn btn-lg">Add Money</button>
-                    <button class="btn btn-lg">Cash Out</button>
+                    <button id="add-toggle" class="btn btn-lg">Add Money</button>
+                    <button id="out-toggle" class="btn btn-lg">Cash Out</button>
                 </div>
                 <div class="divider"></div>
                 <!-- add money form -->
-                <div class="hidden card bg-base-100 w-full max-w-sm shrink-0 shadow-2xl">
+                <div id="add-box" class="card bg-base-100 w-full max-w-sm shrink-0 shadow-2xl">
                     <form class="card-body">
                       <div class="form-control">
                         <label class="label">
@@ -54,19 +54,19 @@
                     </form>
                 </div>
                 <!-- cash out money -->
-                <div class="card bg-base-100 w-full max-w-sm shrink-0 shadow-2xl">
+                <div id="out-box" class="hidden card bg-base-100 w-full max-w-sm shrink-0 shadow-2xl">
                     <form class="card-body">
                       <div class="form-control">
                         <label class="label">
                           <span class="label-text">Amount</span>
                         </label>
-                        <input id="money-input" type="text" placeholder="Enter Amount" class="input input-bordered" autocomplete="off" required />
+                        <input id="money-out" type="text" placeholder="Enter Amount" class="input input-bordered" autocomplete="off" required />
                       </div>
                       <div class="form-control">
                         <label class="label">
                           <span class="label-text">Pin*</span>
                         </label>
-                        <input id="input-pin" type="password" placeholder="pin" class="input input-bordered" autocomplete="off" required />
+                        <input id="out-pin" type="password" placeholder="pin" class="input input-bordered" autocomplete="off" required />
                       </div>
                       <div class="form-control mt-6">
                         <button id="cash-out-btn" class="btn btn-primary">Cash Out</button>

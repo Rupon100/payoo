@@ -1,4 +1,22 @@
  
+//toggle
+const outToggle = document.getElementById('out-toggle');
+outToggle.addEventListener('click', ()=> {
+    const addBox = document.getElementById('add-box');
+    const outBox = document.getElementById('out-box');
+    addBox.style.display = 'none';
+    outBox.style.display = 'block';
+});
+const addToggle = document.getElementById('add-toggle');
+addToggle.addEventListener('click', ()=> {
+    const outBox = document.getElementById('out-box');
+    const addBox = document.getElementById('add-box');
+    outBox.style.display = 'none';
+    addBox.style.display = 'block';
+});
+
+
+
 //add money
 const addBtn = document.getElementById('add-btn');
 addBtn.addEventListener('click', (e)=> {
@@ -23,5 +41,30 @@ addBtn.addEventListener('click', (e)=> {
         alert("Enter a valid amount!");
     }
 
+});
+
+
+//cash-out money
+const outBtn = document.getElementById('cash-out-btn');
+outBtn.addEventListener('click', (e)=> {
+    e.preventDefault();
+    
+    const outInput = document.getElementById('money-out').value;
+    const outPin = document.getElementById('out-pin').value;
+    
+    if(outInput > 0 && outInput < 10000){
+        if(outPin === '1234'){
+            const currentBalance = document.getElementById('current-balance').textContent;
+            const finalBalance = parseFloat(currentBalance) - parseFloat(outInput);
+            document.getElementById('current-balance').innerText = finalBalance;
+
+            document.getElementById('money-out').value = '';
+            document.getElementById('out-pin').value = '';
+        }else{
+            alert('Invalid PIN!');
+        }
+    }else {
+        alert('Enter a valid amount!');
+    }
 });
 
