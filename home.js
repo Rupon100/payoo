@@ -2,17 +2,23 @@
 //toggle
 const outToggle = document.getElementById('out-toggle');
 outToggle.addEventListener('click', ()=> {
-    const addBox = document.getElementById('add-box');
-    const outBox = document.getElementById('out-box');
-    addBox.style.display = 'none';
-    outBox.style.display = 'block';
+    // const addBox = document.getElementById('add-box');
+    // const outBox = document.getElementById('out-box');
+    // addBox.style.display = 'none';
+    // outBox.style.display = 'block';
+    document.getElementById('add-box').classList.add('hidden');
+    document.getElementById('out-box').classList.remove('hidden');
+     //can do with outBox.classList.remove('hidden');
 });
 const addToggle = document.getElementById('add-toggle');
 addToggle.addEventListener('click', ()=> {
-    const outBox = document.getElementById('out-box');
-    const addBox = document.getElementById('add-box');
-    outBox.style.display = 'none';
-    addBox.style.display = 'block';
+    // const outBox = document.getElementById('out-box');
+    // const addBox = document.getElementById('add-box');
+    // outBox.style.display = 'none';
+    // addBox.style.display = 'block';
+    document.getElementById('out-box').classList.add('hidden');
+    document.getElementById('add-box').classList.remove('hidden');
+    //can do with addBox.classList.remove('hidden');
 });
 
 
