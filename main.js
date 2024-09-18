@@ -8,11 +8,11 @@ document.getElementById('btn').addEventListener('click', (e)=> {
     const phoneNumber = document.getElementById('phone-number').value;
     const pinNumber = document.getElementById('pin-number').value;
     
-    if(phoneNumber === '5' && pinNumber === '1234'){
+    if(phoneNumber === '88018' && pinNumber === '1234'){
         console.log("Log in!");
         window.location.href = './home.html';
     }else {
-        console.log("wrong!");
+        alert("wrong!");
     }
 });
 
