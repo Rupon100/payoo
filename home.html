@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payoo Home Page</title>
+    <!-- daisyUi+tailwindCss -->
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@4.12.10/dist/full.min.css" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body>
+    <main class="h-screen flex justify-center items-center">
+        <div class="mockup-phone">
+            <div class="camera"></div>
+            <div class="display">
+              <div class="artboard artboard-demo phone-3">
+                <!-- available balance -->
+                <div class="flex justify-between items-center  space-x-8">
+                    <div class="stats shadow">
+                        <div class="stat">
+                          <div id="main-balance" class="stat-value">1000</div>
+                          <div class="stat-desc">Available Balance</div>
+                        </div>
+                    </div>
+                    <div>
+                        <button class="btn btn-active btn-primary"><a href="./index.html">Log-out</a></button>
+                    </div>
+                </div>
+                <div class="divider"></div>
+                <!-- user action button -->
+                <div>
+                    <button class="btn btn-lg">Add Money</button>
+                    <button class="btn btn-lg">Cash Out</button>
+                </div>
+                <div class="divider"></div>
+                <!-- add money form -->
+                <div class="card bg-base-100 w-full max-w-sm shrink-0 shadow-2xl">
+                    <form class="card-body">
+                      <div class="form-control">
+                        <label class="label">
+                          <span class="label-text">Amount</span>
+                        </label>
+                        <input id="money-input" type="text" placeholder="Enter Amount" class="input input-bordered" autocomplete="off" required />
+                      </div>
+                      <div class="form-control">
+                        <label class="label">
+                          <span class="label-text">Pin*</span>
+                        </label>
+                        <input id="input-pin" type="password" placeholder="pin" class="input input-bordered" autocomplete="off" required />
+                      </div>
+                      <div class="form-control mt-6">
+                        <button id="add-btn" class="btn btn-primary">Add Money</button>
+                      </div>
+                    </form>
+                  </div>
+              </div>
+            </div>
+        </div>
+    </main>
+
+    <script src="./home.js"></script>
+</body>
+</html>
