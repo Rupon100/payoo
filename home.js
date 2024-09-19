@@ -1,18 +1,36 @@
  
 //toggle
-function toggleAction(id1, id2){
-    const addStyle = document.getElementById(id1);
-    const removeStyle = document.getElementById(id2);
-    addStyle.classList.add('hidden');
-    removeStyle.classList.remove('hidden');
-}
+// function toggleAction(id1, id2){
+//     const addStyle = document.getElementById(id1);
+//     const removeStyle = document.getElementById(id2);
+//     addStyle.classList.add('hidden');
+//     removeStyle.classList.remove('hidden');
+// }
 
-document.getElementById('out-toggle').addEventListener('click', ()=> {
-    toggleAction('add-box', 'out-box');
-})
+// document.getElementById('out-toggle').addEventListener('click', ()=> {
+//     toggleAction('add-box', 'out-box');
+// })
+// document.getElementById('add-toggle').addEventListener('click', ()=> {
+//     toggleAction('out-box', 'add-box');
+// })
+
+function showSection(id){
+    document.getElementById('add-box').classList.add('hidden');
+    document.getElementById('out-box').classList.add('hidden');
+    document.getElementById('transition-box').classList.add('hidden');
+
+    document.getElementById(id).classList.remove('hidden');
+}
 document.getElementById('add-toggle').addEventListener('click', ()=> {
-    toggleAction('out-box', 'add-box');
+    showSection('add-box');
 })
+document.getElementById('out-toggle').addEventListener('click', ()=> {
+    showSection('out-box');
+})
+document.getElementById('transition').addEventListener('click', ()=> {
+    showSection('transition-box');
+})
+
 // const outToggle = document.getElementById('out-toggle');
 // outToggle.addEventListener('click', ()=> {
 //     document.getElementById('add-box').classList.add('hidden');
@@ -64,6 +82,11 @@ document.getElementById('add-btn').addEventListener('click', (e)=> {
     
             blankBox('money-input');
             blankBox('input-pin');
+
+            //add to transition history
+            const p = document.createElement('p');
+            p.innerText = `Added: ${addMoney} Tk. New Balance: ${newBalance}`;
+            document.getElementById('tran-container').appendChild(p);
         }else {
             alert('Faild to add the money!');
         }
@@ -113,6 +136,14 @@ document.getElementById('cash-out-btn').addEventListener('click', (e)=> {
 
             blankBox('money-out');
             blankBox('out-pin');
+
+            //add to transition history
+            const div = document.createElement('div');
+            div.classList.add('bg-yellow-500');
+            div.innerHTML = `
+               <p>Cash Out: ${outMoney} TK. New Banalce: ${newBalance}</p>
+            `;
+            document.getElementById('tran-container').appendChild(div);
         }else{
             alert('Enter a valid pin!');
         }
@@ -120,8 +151,6 @@ document.getElementById('cash-out-btn').addEventListener('click', (e)=> {
         alert('Enter valid ammount!');
     }
 });
-
-
 
 
 //cash-out money
@@ -150,4 +179,8 @@ document.getElementById('cash-out-btn').addEventListener('click', (e)=> {
 //         alert('Enter a valid amount!');
 //     }
 // });
+
+
+//transition-history
+
 
